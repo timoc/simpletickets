@@ -4,6 +4,7 @@ import os
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy as ugl
@@ -43,6 +44,7 @@ class TicketManager(models.Manager):
         return all_objects
 
 
+@python_2_unicode_compatible
 class Ticket(models.Model):
     objects = TicketManager()
     ticket_number = models.CharField(max_length=8, blank=True, null=True)
@@ -181,7 +183,7 @@ class Ticket(models.Model):
             reply_to=None
             )
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{ticket_number} {user}'.format(
             ticket_number=self.ticket_number,
             user=self.user,
