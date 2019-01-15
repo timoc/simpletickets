@@ -22,6 +22,7 @@ setup(
     author='Héctor Alvarez (monobot)',
     author_email='monobot.soft@gmail.com',
     keywords=['django', 'tickets'],
+    install_requires=['django-rest-framework'],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
