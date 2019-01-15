@@ -186,7 +186,7 @@ class Ticket(models.Model):
     def __str__(self):
         return u'{ticket_number} {user}'.format(
             ticket_number=self.ticket_number,
-            user=self.user,
+            user=self.user if self.user_id else u'?',
             )
 
     class Meta(object):
