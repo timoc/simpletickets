@@ -49,11 +49,12 @@ class Ticket(models.Model):
     objects = TicketManager()
     ticket_number = models.CharField(max_length=8, blank=True, null=True)
 
-    user = models.ForeignKey(User,)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,)
     staff = models.ForeignKey(User,
         limit_choices_to={'is_staff': True},
         related_name='usrStaff',
         blank=True, null=True,
+        on_delete=models.CASCADE,
         )
 
     ticket_type = models.IntegerField(default=2, choices=ST_TCKT_TYPE)

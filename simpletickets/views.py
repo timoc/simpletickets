@@ -4,7 +4,7 @@ from datetime import timedelta
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required
 from django.contrib.messages.views import SuccessMessageMixin
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 

@@ -29,8 +29,8 @@ class Migration(migrations.Migration):
                 ('modification_date', models.DateTimeField(null=True, verbose_name='Last Modification Date', blank=True)),
                 ('resolution_date', models.DateTimeField(null=True, verbose_name='Resolution date', blank=True)),
                 ('resolution_delta', models.FloatField(null=True, verbose_name='delayed time in seconds', blank=True)),
-                ('staff', models.ForeignKey(related_name='usrStaff', blank=True, to=settings.AUTH_USER_MODEL, null=True)),
-                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('staff', models.ForeignKey(related_name='usrStaff', blank=True, to=settings.AUTH_USER_MODEL, null=True,on_delete=models.CASCADE)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL,on_delete=models.CASCADE)),
             ],
             options={
                 'ordering': ('state', 'severity', 'creation_date'),
